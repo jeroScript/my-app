@@ -1,13 +1,26 @@
-import React from 'react';
-import WeatherLocation from './components/WeatherLocations'
+import React, { Component } from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import LocationsList from './components/LocationsList';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <WeatherLocation></WeatherLocation>
-    </div>
-  );
+const cities = [
+  'Buenos Aires',
+  'Mendoza',
+  'Madrid',
+  'Santiago de chile',
+  'Bogota',
+  'Washington dc'
+]
+class App extends Component {
+  render() {
+    return (
+      <MuiThemeProvider>
+        <div className="App">
+          <LocationsList cities={cities}></LocationsList>
+        </div>
+      </MuiThemeProvider>
+    );
+  }
 }
 
 export default App;
